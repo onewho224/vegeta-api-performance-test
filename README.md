@@ -119,3 +119,11 @@ vegeta plot load.bin > load.html
 - ✅ API performs well under normal load  
 - ⚠️ Performance decreases under stress conditions  
 - ⚡ Spike traffic causes temporary delay  
+
+---
+
+## 📌 Conclusion
+
+The JSONPlaceholder API is stable under normal usage but shows performance degradation under high traffic conditions. It is suitable for testing and development purposes.
+
+---
