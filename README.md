@@ -53,3 +53,12 @@ Objectives:
 ## ⚙️ Methodology
 
 ### Step 1: Create targets.txt
+
+- GET https://jsonplaceholder.typicode.com/posts
+
+### Step 2: Load Test
+```bash
+vegeta attack -rate=10 -duration=30s -targets=targets.txt > load.bin
+vegeta plot load.bin > load.html
+
+
