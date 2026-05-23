@@ -1,72 +1,129 @@
-# 🚀 Real-Time Load Testing and Performance Analysis of JSONPlaceholder API Using Vegeta
+# Real-Time Load Testing and Performance Analysis of JSONPlaceholder API Using Vegeta
 
 ---
 
-## 👤 Student Information
+## Student Information
 - Name: [Your Name]
 - Matric ID: [Your ID]
 - Course: ITT440 / NBCS2555A
 
 ---
 
-## 🎯 Project Objective
+## Objective
 
-This project aims to evaluate the performance and scalability of a public REST API under different traffic conditions using a lightweight HTTP load testing tool.
+This project evaluates the performance of a public REST API under different traffic conditions using a load testing tool.
 
-The objectives are:
-
-- To measure API response time (latency)
-- To evaluate throughput under different loads
-- To analyze system behavior under stress and spike conditions
-- To identify performance bottlenecks
+Objectives:
+- Measure API response time
+- Evaluate system performance under load
+- Analyze stress and spike behavior
 
 ---
 
-## 🌐 Target API
+## API Target
 
-- API Endpoint: https://jsonplaceholder.typicode.com/posts  
-- Type: Public REST API (JSON format)
-
----
-
-## 🛠 Tools Used
-
-- :contentReference[oaicite:0]{index=0}  
-- Windows Command Prompt (CLI)
+https://jsonplaceholder.typicode.com/posts
 
 ---
 
-## 🧪 Test Scenarios
+## Tools Used
 
-### 1. Load Test (Normal Traffic)
-Simulates normal user behavior.
-
-- Rate: 10 requests/second  
-- Duration: 30 seconds  
+- Vegeta (HTTP Load Testing Tool)
+- Windows Command Prompt
 
 ---
 
-### 2. Stress Test (High Traffic)
-Evaluates system performance under heavy load.
+## Test Scenarios
 
-- Rate: 100 requests/second  
-- Duration: 30 seconds  
+### Load Test
+- 10 requests/second
+- 30 seconds
+
+### Stress Test
+- 100 requests/second
+- 30 seconds
+
+### Spike Test
+- 200 requests/second
+- 10 seconds
 
 ---
 
-### 3. Spike Test (Sudden Traffic Surge)
-Simulates sudden traffic increase (e.g., viral event).
+## Methodology
 
-- Rate: 200 requests/second  
-- Duration: 10 seconds  
+### Step 1: Create targets.txt
 
----
-
-## ⚙️ Methodology
-
-### Step 1: Create Target File
-
-Create `targets.txt`:
-
-```text
 GET https://jsonplaceholder.typicode.com/posts
+
+---
+
+### Step 2: Load Test
+
+vegeta attack -rate=10 -duration=30s -targets=targets.txt > load.bin  
+vegeta plot load.bin > load.html  
+
+---
+
+### Step 3: Stress Test
+
+vegeta attack -rate=100 -duration=30s -targets=targets.txt > stress.bin  
+vegeta plot stress.bin > stress.html  
+
+---
+
+### Step 4: Spike Test
+
+vegeta attack -rate=200 -duration=10s -targets=targets.txt > spike.bin  
+vegeta plot spike.bin > spike.html  
+
+---
+
+## Results
+
+### Load Test
+- Stable performance
+- No failures
+
+### Stress Test
+- Higher latency
+- Performance degradation
+
+### Spike Test
+- Sudden spikes
+- Temporary instability
+
+---
+
+## Findings
+
+- API works well under normal load
+- Performance drops under stress
+- Spike causes temporary delay
+
+---
+
+## Conclusion
+
+API is stable for normal usage but not optimized for high traffic.
+
+---
+
+## Repository Structure
+
+vegeta-api-performance-test/  
+├── load/  
+├── stress/  
+├── spike/  
+├── targets.txt  
+└── README.md  
+
+---
+
+## How to Run
+
+vegeta attack -rate=10 -duration=30s -targets=targets.txt > load.bin  
+vegeta plot load.bin > load.html  
+
+Change rate:
+- Stress = 100
+- Spike = 200
