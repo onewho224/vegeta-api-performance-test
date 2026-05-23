@@ -3,8 +3,8 @@
 ---
 
 ## 👤 Student Information
-- Name: [Your Name]
-- Matric ID: [Your ID]
+- Name: Wan Husaini Bin Wan Ibrahim
+- Matric ID: 2023549553
 - Course: ITT440 / NBCS2555A
 - Title: Performance Testing Assignment
 
