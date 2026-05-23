@@ -3,10 +3,9 @@
 ---
 
 ## 👤 Student Information
-- Name: Wan Husaini Bin Wan Ibrahim
-- Matric ID: 2023549553
+- Name: [Your Name]
+- Matric ID: [Your ID]
 - Course: ITT440 / NBCS2555A
-- Title: Performance Testing Assignment
 
 ---
 
@@ -14,57 +13,60 @@
 
 This project aims to evaluate the performance and scalability of a public REST API under different traffic conditions using a lightweight HTTP load testing tool.
 
-The main objectives are:
+The objectives are:
 
 - To measure API response time (latency)
-- To evaluate system throughput under different loads
+- To evaluate throughput under different loads
 - To analyze system behavior under stress and spike conditions
-- To identify potential performance bottlenecks
+- To identify performance bottlenecks
 
 ---
 
 ## 🌐 Target API
 
-- API Endpoint: https://jsonplaceholder.typicode.com/posts
-- Type: Public REST API (JSON-based)
+- API Endpoint: https://jsonplaceholder.typicode.com/posts  
+- Type: Public REST API (JSON format)
 
 ---
 
 ## 🛠 Tools Used
 
-- Vegeta HTTP Load Testing Tool
-- Windows Command Prompt (CLI environment)
+- :contentReference[oaicite:0]{index=0}  
+- Windows Command Prompt (CLI)
 
 ---
 
 ## 🧪 Test Scenarios
 
 ### 1. Load Test (Normal Traffic)
-Simulates normal user behavior under expected system usage.
+Simulates normal user behavior.
 
-- Rate: 10 requests/second
-- Duration: 30 seconds
+- Rate: 10 requests/second  
+- Duration: 30 seconds  
 
 ---
 
 ### 2. Stress Test (High Traffic)
-Evaluates system behavior under high concurrency.
+Evaluates system performance under heavy load.
 
-- Rate: 100 requests/second
-- Duration: 30 seconds
+- Rate: 100 requests/second  
+- Duration: 30 seconds  
 
 ---
 
 ### 3. Spike Test (Sudden Traffic Surge)
-Simulates sudden increase in user traffic (e.g., viral event).
+Simulates sudden traffic increase (e.g., viral event).
 
-- Rate: 200 requests/second
-- Duration: 10 seconds
+- Rate: 200 requests/second  
+- Duration: 10 seconds  
 
 ---
 
-## ⚙️ Testing Methodology
+## ⚙️ Methodology
 
-All tests were executed using Vegeta CLI commands.
+### Step 1: Create Target File
 
-### Step 1: Prepare Target File
+Create `targets.txt`:
+
+```text
+GET https://jsonplaceholder.typicode.com/posts
