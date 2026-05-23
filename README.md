@@ -86,29 +86,36 @@ vegeta plot load.bin > load.html
 
 ### 📉 Load Test
 
+![Load Test Graph](images/load.png)
+
 - Stable response time
 - No request failures
 - System handled normal traffic well
 
+---
+
 ### 🔥 Stress Test
+
+![Stress Test Graph](images/stress.png)
+
 - Increased latency observed
 - Performance degradation occurred
 - System still functional
 
+---
+
 ### ⚡ Spike Test
+
+![Spike Test Graph](images/spike.png)
+
 - Sudden latency spikes detected
 - Temporary instability observed
 - System recovered after load dropped
 
-### 🔍 Findings
-- ✅ API performs well under normal load
-- ⚠️ Performance decreases under stress conditions
-- ⚡ Spike traffic causes temporary delay
-
 ---
 
-## 📌 Conclusion
+## 🔍 Findings
 
-The JSONPlaceholder API is stable under normal usage but shows performance degradation under high traffic conditions. It is suitable for testing and development purposes.
-
----
+- ✅ API performs well under normal load  
+- ⚠️ Performance decreases under stress conditions  
+- ⚡ Spike traffic causes temporary delay  
